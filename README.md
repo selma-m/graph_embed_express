@@ -1,2 +1,2 @@
-# graph_embed_express
+# Expressivity of Graph Embeddings via Geometric Scattering using Diffusion Geometry
 Senior project
