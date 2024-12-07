@@ -1,6 +1,10 @@
 import torch
 import torch.nn as nn
 
+"""
+    Simple MLP classifiers
+"""
+
 class MLP(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim):
         super(MLP, self).__init__()
