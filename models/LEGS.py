@@ -15,6 +15,7 @@ np.random.seed(29)
 
 device = torch.device("cuda")
 
+## Adapted from: 
 ## Author: Alex Tong
 ## Reference: Data-Driven Learning of Geometric Scattering Networks, IEEE Machine Learning for Signal Processing Workshop 2021
 
