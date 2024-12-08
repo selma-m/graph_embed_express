@@ -115,14 +115,15 @@ class LazyLayer(torch.nn.Module):
 
     def __init__(self, n):
         super().__init__()
+        self.n = n
         self.weights = torch.nn.Parameter(torch.Tensor(2, n))
 
     def forward(self, x, propogated):
         inp = torch.stack((x, propogated), dim=1)
         s_weights = torch.nn.functional.softmax(self.weights, dim=0)
-        print(inp.shape)
-        print(s_weights.shape)
-        return torch.sum(inp * s_weights, dim=-2)
+        s_weights = s_weights.view(1,2,x.shape[-2], -1)
+        return torch.sum(inp * s_weights, dim = -3)
+        # output needs to be of the same shape as the input
 
     def reset_parameters(self):
         torch.nn.init.ones_(self.weights)
